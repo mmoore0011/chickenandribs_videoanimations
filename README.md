@@ -16,10 +16,6 @@ somewhere else, you can skip straight to the Unity half.
 - **Unity: Quad from Video** (`MakeQuadFromVideo.cs`): turns any
   alpha-transparent video into a ready-to-place world-space Quad prefab.
 
-Looking for a full-screen triggered intro video overlay instead of a
-world-space quad? That's a separate tool, `intro_video` (not yet
-published).
-
 ## Installation
 
 **Option A — import the `.unitypackage`** (easiest, for the Unity tool):
