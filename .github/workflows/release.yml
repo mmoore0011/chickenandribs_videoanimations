@@ -1,0 +1,24 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-and-release:
+    runs-on: windows-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build .unitypackage
+        shell: pwsh
+        run: .\make_standalone_pkg.ps1 -PackageName "Video Animations" -OutputFile "videoanimations.unitypackage"
+
+      - name: Create GitHub Release
+        shell: pwsh
+        run: gh release create "${{ github.ref_name }}" "videoanimations.unitypackage" --title "${{ github.ref_name }}" --generate-notes
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

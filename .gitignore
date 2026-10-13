@@ -1,0 +1,11 @@
+*.unitypackage
+MEMORY.md
+*.blend1
+*.blend2
+*.blend3
+Thumbs.db
+.DS_Store
+desktop.ini
+.vs/
+*.user
+.claude/
